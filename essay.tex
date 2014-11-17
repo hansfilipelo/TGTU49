@@ -21,6 +21,18 @@
 \usepackage{a4wide}
 \usepackage{caption}
 \usepackage{helvet}
+\usepackage{tocloft}
+
+% Allow footnotes listing so I don't need to quote other sources
+\newcommand{\listfootnotesname}{Referenser}% 'List of Footnotes' title 
+\newlistof[chapter]{footnotes}{fnt}{\listfootnotesname}% New 'List of...' for footnotes 
+\let\oldfootnote\footnote % Save the old \footnote{...} command 
+ \renewcommand\footnote[1]{% Redefine the new footnote to also add 'List of Footnote' entries. 
+     \refstepcounter{footnotes}% Add and step a reference to the footnote/counter. 
+     \oldfootnote{#1}% Make a regular footnote. 
+     \addcontentsline{fnt}{footnotes}{\protect 
+ \numberline{\thefootnotes}#1}% Add the 'List of...' entry. 
+}
 
 % Set sans serif font to Helvetica
 %\setsansfont{Helvetica}
@@ -129,19 +141,19 @@ Forntiden är en väldigt lång tidsperiod, faktiskt större delen av människan
 \subsection{Människan blir jordbrukare}
 I takt med människans utbredning minskade tillgången på större rovdjur, människans primära näringskälla. Bristen på mat ledde till att människan sökte alternativa sätt att finna föda. Den tidiga jordbrukarens redskap bestod framförallt av grävkäppen, en krökt pinne som användes för att underlätta sådd. 
 
-Människan började också senare att ha husdjur. Dessa husdjur innefattade hundar, får, getter, hästar och oxar. I takt med att utvecklingen av fler redskap kom till - så som hackan, skäran och även årdret -  kom höstar och oxar att användas i för att bistå med jordbruket. Genom de nya redskapen och djuren kunde jorbruket öka i skala och bättre försörja en familj. 
+Människan började också senare att ha husdjur. Dessa husdjur innefattade hundar, får, getter, hästar och oxar. I takt med att utvecklingen av fler redskap kom till - så som hackan, skäran och även årdret -  kom höstar och oxar att användas i för att bistå med jordbruket. Genom de nya redskapen och djuren kunde jordbruket öka i skala och bättre försörja en familj. 
 
-Jorbruket gjorde också människan till en mycket mer bofast varelse, vilket möjliggjorde mer permanenta bosättningar. 
+Jordbruket gjorde också människan till en mycket mer bofast varelse, vilket möjliggjorde mer permanenta bosättningar. 
 
 \subsection{De första civilisationerna}
 
-I och med den mer bofasta levnadsstilen insåg människan fördelen av att sammordna sina boenden. En större grupp är tryggare från attacker av djur och andra människogrupper, och invånarna i en större bosättning kan bistå varandra med olika tjänster. De första större civilisationerna skapades kring ekvatorn, runt några av jordens större floder, kring år 4000 till 3000 f Kr. Att civilisationer skapas först kring ekvatorn och floder är ingen tillfällighet, i o m att tillgången på sötvatten är hög och likaså bördigheten i jorden. 
+I och med den mer bofasta levnadsstilen insåg människan fördelen av att samordna sina boenden. En större grupp är tryggare från attacker av djur och andra människogrupper, och invånarna i en större bosättning kan bistå varandra med olika tjänster. De första större civilisationerna skapades kring ekvatorn, runt några av jordens större floder, kring år 4000 till 3000 f Kr. Att civilisationer skapas först kring ekvatorn och floder är ingen tillfällighet, i o m att tillgången på sötvatten är hög och likaså bördigheten i jorden. 
 
 I och med att bosättningar byggdes i allt större skalor skapade människan ett behov för teknisk utveckling. Man började utveckla byggnads- och bevattningstekniker allt mer för att kunna fylla både mat- och logi till sina civilisationers växande befolkningar. Det är i dessa civilisationer man först funnit bevis på att människan arbetat med brons, alltså en legering mellan tenn och koppar. Bronset hade en betydande del framförallt för vapenproduktion, men till viss del också verktyg. 
 
 De tekniska framstegen inom byggnads och bevattningsteknik gjorde att fler människor kunde få sina levnadsbehov uppfyllda, vilket ledde till att utvecklingen spirade på en rad andra områden. 
 
-I forntidens civilisationer utvecklades det första skriftspråket, i Mesopotamien. Detta skriftspråk, kilskriften, var ett bildligt skriftspråk som använde symboler som beteckning för ord. Egyptiens hieroglyfer tros vara influerade av den Mesopotamiska kilskriften. I och med skriftspråket introducerades även tillverkningen av pergament både i Egypten och Mesopotamien. 
+I forntidens civilisationer utvecklades det första skriftspråket, i Mesopotamien. Detta skriftspråk, kilskriften, var ett bildligt skriftspråk som använde symboler som beteckning för ord. Egyptens hieroglyfer tros vara influerade av den Mesopotamiska kilskriften. I och med skriftspråket introducerades även tillverkningen av pergament både i Egypten och Mesopotamien. 
 
 % ---------- Antik
 \newpage
@@ -150,6 +162,29 @@ I forntidens civilisationer utvecklades det första skriftspråket, i Mesopotami
 Efter de forntida civilisationerna startade, kring år 700 f Kr, antiken. Under antiken stod tre civilisationer, Grekland, Kina och Rom som de starkast lysande stjärnorna på den kulturella natthimlen. Grekland ses hos många teoretiker och läror som den västerländska kulturens grundare, och Rom som dess spirituella arvtagare. 
 
 \subsection{Grekland}
+
+Grekland - västvärldens kulturella vagga. Det ses som något ädelt. Antikens Grekland är något som de flesta har goda referenser till. Civilisationen utvecklade i princip alla vetenskapliga områden. Alla former av vetenskap och även jämlikhet (dock mellan män) var saker som prioriterades högt. Grekerna grundlade hela vetenskapliga områden så som matematiken, astrologin, filosofin och fysiken. Strävan efter jämlikhet gjorde också att grekerna skapade världens första försök till en demokratisk stat\footnote{Nationalencyklopedin, http://www.ne.se/uppslagsverk/encyklopedi/l\%C3\%A5ng/demokrati/demokratin-under-antiken, hämtad 2014-11-17}. 
+
+I Alexandria, i nuvarande Egypten, i antikens Grekland uppfördes år 300 f Kr världens första universitet, Museion\footnote{Hansson, Staffan. Den skapande människan. 1:a upplagan. Lund: Studentlitteratur, 2002}, där dåtidens forskare och filosofer verkade. Här verkade bland annat Euklides, geometrins fader. En annan känd matematiker från antiken är Pythagoras, mest känd för ''Pythagoras sats'' ($a^2+b^2=c^2$) vilken beskriver förhållandet mellan en rätvinklig triangels sidlängder.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=70mm]{pythagoras.png}
+\caption{Pythagoras sats}
+\label{pythagoras}
+\end{figure}
+
+Den mest kända vetenskapsmannen från antikens Grekland får nog ändå ses som filosofen och fysiken Archimedes. Archimedes princip beskriver kroppars förmåga att ''flyta'' respektive ''sjunka'' och är en grundsten inom fysiken. 
+
+Det finns en stor del väldigt kända vetenskapsmän och filosofer från antikens Grekland, men dessa får stå som exempel för den accelererade vetenskapsutvecklingen under den här perioden. 
+
+\subsection{Romerska Imperiet}
+
+
+
+% ---------- Medeltiden 
+\newpage
+\section{Medeltiden}
 
 
 
@@ -160,7 +195,14 @@ Efter de forntida civilisationerna startade, kring år 700 f Kr, antiken. Under 
 
 Att den teknologiska utvecklingen gått hand i hand med den sociala, ekonomiska och vetenskapliga utvecklingen är inget att tveka på. Ibland kommer föder den ekonomiska eller sociala utvecklingen ett behov hos tekniken eller vetenskapen, ibland förändrar tekniken eller den vetenskapliga utvecklingen spelfältet för det sociala och ekonomiska landskapet. 
 
-Gemensamt är att teknisk utveckling som sker i öppetnhet, eller publika domänen, är det som gett mest mervärde för mänskligheten. En förhoppning från min sida mot framtiden är att allt mer utveckling, framförallt av säkerhetskritiska system, sker i en publik domän. Spionage och brist på öppenhet har förr, farmförallt under Kalla Kriget, varit en stor faktor till spänningar inom världspolitiken. Bristen på öppenhet och det allt mer utbredda cyberespionaget kan vara det största framtida teknologiska hotet mot mänskligheten. 
+Gemensamt är att teknisk utveckling som sker i öppenhet, eller publika domänen, är det som gett mest mervärde för mänskligheten. En förhoppning från min sida mot framtiden är att allt mer utveckling, framförallt av säkerhetskritiska system, sker i en publik domän. Spionage och brist på öppenhet har förr, framförallt under Kalla Kriget, varit en stor faktor till spänningar inom världspolitiken. Bristen på öppenhet och det allt mer utbredda cyberspionaget kan vara det största framtida teknologiska hotet mot mänskligheten. 
+
+% --------- Källor
+
+\newpage
+\addcontentsline{toc}{section}{Referenser}
+
+\listoffootnotes
 
 \end{document}
 
