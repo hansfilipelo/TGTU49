@@ -107,3 +107,5 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+
+# PDFs don't belong here
